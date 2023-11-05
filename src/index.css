@@ -1,0 +1,18 @@
+/* 
+
+*/
+
+/* ********** IMPORT TAILWIND CSS **********  */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* ********** COMMON CSS **********  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #ebeff5;
+}
