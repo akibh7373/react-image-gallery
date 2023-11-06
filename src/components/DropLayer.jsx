@@ -1,6 +1,6 @@
 import React from "react";
 
-const DragDropOverlay = ({ dragging, draggedIndex, image }) => {
+const DropLayer = ({ dragging, draggedIndex, image }) => {
   return (
     dragging &&
     Number(draggedIndex) === Number(image.id) && (
@@ -11,4 +11,4 @@ const DragDropOverlay = ({ dragging, draggedIndex, image }) => {
   );
 };
 
-export default DragDropOverlay;
+export default DropLayer;

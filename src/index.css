@@ -1,6 +1,18 @@
-/* 
-
-*/
+/**************************************************
+Theme Name     : React Image Gallery
+Author         : Akib Hossain
+Version        : 1.0.0
+Primary Use    : ----
+**************************************************/
+/**************************************************
+Table Of Contents
+ **************************************************
+ 1. Global Styles
+ 1. Home UI
+ 2. Tailwind CSS
+ 3. React Icons
+ 15. Media Queries
+**************************************************/
 
 /* ********** IMPORT TAILWIND CSS **********  */
 @import 'tailwindcss/base';

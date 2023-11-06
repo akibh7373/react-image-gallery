@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import GalleryHeader from "./GalleryHeader";
-import GalleryImage from "./GalleryImage";
-import ImageUploader from "./ImageUploader";
+import Header from "./Header";
+import GalleryImg from "./GalleryImg";
+import UploadImg from "./UploadImg";
 import { images } from "../data/data";
 
 const Gallery = () => {
@@ -48,21 +48,23 @@ const Gallery = () => {
   return (
     <>
       <div
-        className={`min-h-screen w-screen flex flex-row items-center justify-center md:p-0 p-4`}>
+        className="min-h-screen w-screen flex flex-row items-center justify-center md:p-0 p-4">
         <div className="lg:w-1/2 md:w-3/4 w-full bg-white rounded-lg shadow">
-          <div className="flex flex-col gap-y-2">
-            <GalleryHeader
+          <div className="flex flex-col">
+            {/* HEADER ADDED */}
+            <Header
               selectThumbnails={selectThumbnails}
               setSelectThumbnails={setSelectThumbnails}
               handleDeleteClick={handleDeleteClick}
             />
             <hr />
-            <section className="h-full w-full p-6">
+            <section className="h-full w-full p-4">
               <div
-                className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-6"
+                className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-3 gap-4"
                 onDragOver={handleDragOver}>
                 {thumbnails.map((image, index) => (
-                  <GalleryImage
+                  // GALLRY IMG ADDED
+                  <GalleryImg
                     key={index}
                     image={image}
                     index={index}
@@ -74,7 +76,8 @@ const Gallery = () => {
                     draggedIndex={draggedIndex}
                   />
                 ))}
-                <ImageUploader handleFileChange={handleFileChange} />
+                {/* UPLOAD IMG ADDED */}
+                <UploadImg handleFileChange={handleFileChange} />
               </div>
             </section>
           </div>

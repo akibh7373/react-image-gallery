@@ -1,27 +1,25 @@
 import React from "react";
 
-const GalleryHeader = ({
+const Header = ({
   selectThumbnails,
   setSelectThumbnails,
   handleDeleteClick,
 }) => {
   return (
-    <nav className="py-4 px-6">
-      <article className="flex flex-row justify-between items-center">
+    <header className="flex flex-row justify-between items-center lg:py-3 py-2 md:px-6 px-3">
         <h1 className="text-2xl font-bold">
           {selectThumbnails.length === 0 ? (
             "Gallery"
           ) : (
             <label
               htmlFor="select"
-              className="flex flex-row justify-between items-center gap-x-4"
-            >
+              className="flex flex-row justify-between items-center gap-x-2">
               <input
                 type="checkbox"
                 name="select"
                 id="select"
                 checked={selectThumbnails.length > 0}
-                className="h-5 w-5 accent-blue-500 cursor-pointer"
+                className="h-4 w-4 cursor-pointer"
                 onChange={() => setSelectThumbnails([])}
               />
               {selectThumbnails.length} Files Selected
@@ -29,14 +27,12 @@ const GalleryHeader = ({
           )}
         </h1>
         <button
-          className="text-red-500 font-medium"
-          onClick={handleDeleteClick}
-        >
+          className="text-red-700 font-medium md:text-lg text-md"
+          onClick={handleDeleteClick}>
           Delete files
         </button>
-      </article>
-    </nav>
+    </header>
   );
 };
 
-export default GalleryHeader;
+export default Header;

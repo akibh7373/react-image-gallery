@@ -1,7 +1,7 @@
 import React from "react";
-import DragDropOverlay from "./DragDropOverlay";
+import DropLayer from "./DropLayer";
 
-const GalleryImage = ({
+const GalleryImg = ({
   image,
   index,
   selectThumbnails,
@@ -16,7 +16,7 @@ const GalleryImage = ({
       key={index}
       className={
         "group relative before:content-[''] before:absolute before:h-full before:w-full before:rounded-lg before:transition-colors before:cursor-move" +
-        (index === 0 ? " md:col-span-2 md:row-span-2" : " col-span-1") +
+        (index === 0 ? " md:col-span-2 col-span-2 md:row-span-2 row-span-2" : " col-span-1") +
         (selectThumbnails.find((photo) => photo.id === image.id)
           ? " opacity-100"
           : " hover:before:bg-black/50")
@@ -42,7 +42,7 @@ const GalleryImage = ({
         name={image.id}
         id={image.id}
         className={
-          "absolute top-4 left-4 h-5 w-5 accent-blue-500 group-hover:opacity-100 transition-opacity delay-100 duration-100 ease-linear cursor-pointer" +
+          "absolute md:top-4 md:left-4 top-3 left-3 h-4 w-4 group-hover:opacity-100 transition-opacity delay-100 duration-100 ease-linear cursor-pointer" +
           " " +
           (selectThumbnails.find((photo) => photo.id === image.id)
             ? "opacity-100"
@@ -59,7 +59,7 @@ const GalleryImage = ({
           else setSelectThumbnails([...selectThumbnails, image]);
         }}
       />
-      <DragDropOverlay
+      <DropLayer
         dragging={dragging}
         draggedIndex={draggedIndex}
         image={image}
@@ -68,4 +68,4 @@ const GalleryImage = ({
   );
 };
 
-export default GalleryImage;
+export default GalleryImg;
